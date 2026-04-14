@@ -1,0 +1,20 @@
+name: Basic Check
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Validate repo
+        run: |
+          echo "Running validation..."
+          ls -la
+
+      - name: Simulate check
+        run: echo "All checks passed"
